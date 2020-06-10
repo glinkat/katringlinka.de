@@ -7,11 +7,12 @@ layout: index
 			<ul class="nav-list">
 				<li><a href="#sec-work">1. Work</a></li>
 				<li><a href="#sec-education">2. Education</a></li>
-				<li><a href="#sec-teaching">3. Teaching</a></li>
-				<li><a href="#sec-talks">4. Talks</a></li>
-				<li><a href="#sec-publications">5. Publications</a></li>
-				<li><a href="#sec-funding">6. Funding &amp; Awards</a></li>
-				<li><a href="#sec-other">7. Other</a></li>
+				<li><a href="#sec-publications">3. Publications</a></li>
+				<li><a href="#sec-teaching">4. Teaching</a></li>
+				<li><a href="#sec-talks">5. Talks</a></li>
+				
+				<!-- <li><a href="#sec-funding">6. Funding &amp; Awards</a></li> -->
+				<!-- <li><a href="#sec-other">7. Other</a></li> -->
 			</ul>
 		</div>
 	</section>
@@ -20,14 +21,16 @@ layout: index
 		    <h3><span>1. — Work</span></h3>
 		    <ul class="item-list">
 {% for work in site.data.work %}
-          <li>
+{% assign mod4 = forloop.index | minus:1 | modulo:3 %}
+{% assign mod3 = forloop.index | minus:1 | modulo:2 %}
+		  <li class="{% if mod4 == 0 %}col-4 {% endif %}{% if mod3 == 0 %}col-3 {% endif %}">
             <div class="tags"><span class="tag date">{{ work.date }}</span> — <span class="tag geo">{{ work.geo }}</span></div>
             <div class="title">
                 <h4>{{ work.title }}</h4>,
                 <h5>
-                  {% if work.link != "" %}<a href="{{ work.link }}">{% endif %}
+                  {% if work.link and work.link != "" %}<a href="{{ work.link }}">{% endif %}
                     {{ work.organisation }}
-                  {% if work.link != "" %}</a>{% endif %}
+                  {% if work.link and work.link != "" %}</a>{% endif %}
                 </h5>
             </div>
             <p>{{ work.description }}</p>
@@ -41,11 +44,34 @@ layout: index
 		    <h3><span>2. — Education</span></h3>
 		    <ul class="item-list">
 {% for education in site.data.education %}
-            <li>
+{% assign mod4 = forloop.index | minus:1 | modulo:3 %}
+{% assign mod3 = forloop.index | minus:1 | modulo:2 %}
+		  <li class="{% if mod4 == 0 %}col-4 {% endif %}{% if mod3 == 0 %}col-3 {% endif %}">
                 <div class="tags"><span class="tag date">{{ education.date }}</span> — <span class="tag geo">{{ education.geo }}</span></div>
                 <div class="title">
                     <h4>{{ education.title }}</h4>, <h5>{{ education.department }}, <a href="{{ education.link }}">{{ education.university }}</a></h5></div>
-                <p>{{ education.description }}{% if education.more != "" %} <a href="{{ education.more }}">Read&nbsp;more&nbsp;»</a>{% endif %}</p>
+                <p>{{ education.description }}</p>
+            </li>
+{% endfor %}
+		    </ul>
+		</div>
+	</section>
+	<section id="sec-publications" class="section">
+		<div class="content sec-publications-content">
+		    <h3><span>3. — Publications</span></h3>
+		    <ul class="item-list small-list">
+{% for publications in site.data.publications %}
+{% assign mod4 = forloop.index | minus:1 | modulo:3 %}
+{% assign mod3 = forloop.index | minus:1 | modulo:2 %}
+		  <li class="{% if mod4 == 0 %}col-4 {% endif %}{% if mod3 == 0 %}col-3 {% endif %}">
+                <div class="tags">
+					<span class="tag date">{{ publications.date }}</span> — <span class="tag type">{{ publications.type }}</span>
+				</div>
+                <div class="title">
+                    <h5>{{ publications.authors }},</h5>
+					<h4><a href="{{ publications.link }}">{{ publications.title }}</a></h4>
+                </div>
+                <p>{{ publications.publication }}</p>
             </li>
 {% endfor %}
 		    </ul>
@@ -53,10 +79,12 @@ layout: index
 	</section>
 	<section id="sec-teaching" class="section">
 		<div class="content sec-teaching-content">
-		    <h3><span>3. — Teaching</span></h3>
+		    <h3><span>4. — Teaching</span></h3>
 		    <ul class="item-list small-list">
 {% for teaching in site.data.teaching %}
-          <li{% if forloop.index > 5 %} class="more"{% endif %}>
+{% assign mod4 = forloop.index | minus:1 | modulo:3 %}
+{% assign mod3 = forloop.index | minus:1 | modulo:2 %}
+		  <li class="{% if mod4 == 0 %}col-4 {% endif %}{% if mod3 == 0 %}col-3 {% endif %}">
               <div class="tags"><span class="tag date">{{ teaching.date }}</span> — <span class="tag type">{{ teaching.type }}</span></div>
               <div class="title">
                   <h4>{{ teaching.title }}, </h4>
@@ -64,18 +92,17 @@ layout: index
               </div>
           </li>
 {% endfor %}
-		        <li>
-		        	<button class="sec-teaching-button" onclick="toggleSection('teaching');">+&nbsp;Expand</button>
-		        </li>
 		    </ul>
 		</div>
 	</section>
 	<section id="sec-talks" class="section">
 		<div class="content sec-talks-content">
-		    <h3><span>4. — Talks</span> <span class="small-title">(selection)</span></h3>
+		    <h3><span>5. — Talks</span> <span class="small-title">(selection)</span></h3>
 		    <ul class="item-list small-list">
 {% for talks in site.data.talks %}
-            <li{% if forloop.index > 5 %} class="more"{% endif %}>
+{% assign mod4 = forloop.index | minus:1 | modulo:3 %}
+{% assign mod3 = forloop.index | minus:1 | modulo:2 %}
+		  <li class="{% if mod4 == 0 %}col-4 {% endif %}{% if mod3 == 0 %}col-3 {% endif %}">
                 <div class="tags"><span class="tag date">{{ talks.date }}</span> — <span class="tag type">{{ talks.geo }}</span></div>
                 <div class="title">
                     <h4>{{ talks.title }}, </h4>
@@ -83,33 +110,13 @@ layout: index
                 </div>
             </li>
   {% endfor %}
-		        <li>
-		        	<button class="sec-talks-button" onclick="toggleSection('talks');">+&nbsp;Expand</button>
-		        </li>
+		       
 		    </ul>
 		</div>
 	</section>
-	<section id="sec-publications" class="section">
-		<div class="content sec-publications-content">
-		    <h3><span>5. — Publications</span></h3>
-		    <ul class="item-list small-list">
-{% for publications in site.data.publications %}
-            <li{% if forloop.index > 5 %} class="more"{% endif %}>
-                <div class="tags"><span class="tag date">{{ publications.date }}</span> — <span class="tag type">{{ publications.type }}</span></div>
-                <div class="title">
-                    <h5>{{ publications.authors }}, </h5>
-                    <h4>{{ publications.title }}</h4>
-                </div>
-                <p>{{ publications.publication }}</p>
-            </li>
-{% endfor %}
-		       	<li>
-		        	<button class="sec-publications-button" onclick="toggleSection('publications');">+&nbsp;Expand</button>
-		        </li>
-		    </ul>
-		</div>
-	</section>
-	<section id="sec-funding" class="section">
+	<hr class="divider" />
+
+	<!-- <section id="sec-funding" class="section">
 		<div class="content sec-funding-content">
 		    <h3><span>6. — Funding &amp; Awards</span></h3>
 		    <ul class="item-list">
@@ -145,4 +152,4 @@ layout: index
 {% endfor %}
 		    </ul>
 		</div>
-	</section>
+	</section> -->
