@@ -4,7 +4,7 @@ plugins:
 whitelist:
   - jekyll-redirect-from
 
-exclude: ["_backup", "CNAME", "LICENSE.md", "README.md"]
+exclude: ["_backup", "CNAME", "LICENSE.md", "README.md", "Gemfile", "Gemfile.lock"]
 
 host: https://www.katringlinka.de
 url: https://www.katringlinka.de
