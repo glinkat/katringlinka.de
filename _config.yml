@@ -6,6 +6,9 @@ whitelist:
 
 exclude: ["_backup", "CNAME", "LICENSE.md", "README.md"]
 
+host: https://www.katringlinka.de
+url: https://www.katringlinka.de
+
 markdown: kramdown
 permalink: pretty
 
