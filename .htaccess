@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\.katringlinka\.de$ [NC]
+RewriteRule ^(.*)$ https://www.katringlinka.de/$1 [L,R=301]
