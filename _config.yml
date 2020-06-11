@@ -6,8 +6,8 @@ whitelist:
 
 exclude: ["_backup", "CNAME", "LICENSE.md", "README.md", "Gemfile", "Gemfile.lock", ".htaccess"]
 
-host: https://katringlinka.de
-url: https://katringlinka.de
+host: https://www.katringlinka.de
+url: https://www.katringlinka.de
 
 markdown: kramdown
 permalink: pretty
