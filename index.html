@@ -113,14 +113,13 @@ layout: index
 		    </ul>
 		</div>
 	</section>
-	<hr class="divider" />
 
 	<section id="sec-funding" class="section">
 		<div class="content sec-funding-content">
 		    <h3><span>6. — Grants &amp; Stipends</span></h3>
 		    <ul class="item-list">
 {% for funding in site.data.funding %}
-          <li{% if forloop.index > 5 %} class="more"{% endif %}>
+          <li>
               <div class="tags"><span class="tag date">{{ funding.date }}</span> — <span class="tag type">{{ funding.geo }}</span></div>
               <div class="title">
                   <h4>{{ funding.organisation }}</h4>
@@ -129,12 +128,10 @@ layout: index
               <p>{{ funding.description }}</p>
           </li>
 {% endfor %}
-				  <li>
-		        <button class="sec-funding-button" onclick="toggleSection('funding');">+&nbsp;Expand</button>
-		      </li>
 		    </ul>
 		</div>
 	</section>
+	<hr class="divider" />
 	<!-- <section id="sec-activites" class="section">
 		<div class="content">
 		    <h3><span>7. — Other Activities</span></h3>
