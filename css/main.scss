@@ -299,6 +299,7 @@ section{
 	}
 }
 
+
 #sec-copy{
 	width:80%;
 	margin:0 auto;
@@ -451,6 +452,14 @@ dl dd{
 	height:auto;
 }
 
+#sec-work .item-list li h4 a{
+	color: #6c9163;
+}	
+
+#sec-work .item-list li p a {
+	color: #6c9163;
+}
+
 .item-list{
 	button{
 		width:100px;
@@ -595,13 +604,7 @@ footer{
 		// margin-bottom: 30px;
 	}
 
-	#sec-work .item-list li h4 a{
-		color: #6c9163;
-	}	
 
-	#sec-work .item-list li p a {
-		color: #6c9163;
-	}
 }
 
 @media (min-width: 1200px) {
