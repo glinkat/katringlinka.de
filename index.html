@@ -66,8 +66,10 @@ layout: index
 					<span class="tag date">{{ publications.date }}</span> — <span class="tag type">{{ publications.type }}</span>
 				</div>
                 <div class="title">
-                    <h5>{{ publications.authors }},</h5>
-					<h4><a href="{{ publications.link }}">{{ publications.title }}</a></h4>
+					<h5>{{ publications.authors }},</h5>
+					<h4>{% if publications.link and publications.link != "" %}<a href="{{ publications.link }}">{% endif %}
+						{{ publications.title }}
+						{% if work.link and work.link != "" %}</a>{% endif %}</h4>
                 </div>
                 <p>{{ publications.publication }}</p>
             </li>
