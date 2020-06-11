@@ -61,7 +61,7 @@ layout: index
 {% for publications in site.data.publications %}
 {% assign mod4 = forloop.index | minus:1 | modulo:3 %}
 {% assign mod3 = forloop.index | minus:1 | modulo:2 %}
-		  <li class="{% if mod4 == 0 %}col-4 {% endif %}{% if mod3 == 0 %}col-3 {% endif %}{% if forloop.index > 6 %}more{% endif %}">
+		  <li class="{% if mod4 == 0 %}col-4 {% endif %}{% if mod3 == 0 %}col-3 {% endif %}{% if forloop.index > 9 %}more{% endif %}">
                 <div class="tags">
 					<span class="tag date">{{ publications.date }}</span> — <span class="tag type">{{ publications.type }}</span>
 				</div>
