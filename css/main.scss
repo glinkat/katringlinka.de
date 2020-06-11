@@ -434,8 +434,8 @@ dl dd{
 	}
 }
 
-.expanded .hidden{
-	display:list-item;
+.expanded .item-list li.hidden{
+	display:block;
 }
 
 .hidden{
