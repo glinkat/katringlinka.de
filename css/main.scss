@@ -78,7 +78,7 @@ html{
 #wrapper {
 	background-color:#fff;
 	box-sizing: border-box;
-	font-family: Times, serif;
+	font-family: 'Quattrocento', serif;
 }
 
 *, ::before, ::after {
@@ -133,7 +133,7 @@ header{
 }
 
 #contact-link{
-	font-family: 'Quatrocento';
+	font-family: 'Quattrocento';
 	font-size:16px;
 	float:left;
 	margin-right:20px;
@@ -318,6 +318,7 @@ section{
 	}
 
 	h3{
+		font-family: 'Quattrocento';
 		font-size:30px;
 	}
 
@@ -464,6 +465,7 @@ dl dd{
 
 .item-list{
 	p{
+		font-family: 'Fanwood Text';
 		font-size:12px;
 		padding:3px 0 0 0;
 		a{
@@ -555,12 +557,14 @@ dl dd{
 }
 
 .tags{
+	font-family: 'Fanwood Text';
 	font-size:12px;
 }
 
 .title{
 	padding-top:3px;
 	h4,h5{
+		font-family: 'Quattrocento';
 		display:inline;
 		font-size:16px;
 		a{
