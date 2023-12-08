@@ -125,7 +125,9 @@ layout: index
 		    <h3><span>6. Grants &amp; Stipends</span></h3>
 		    <ul class="item-list">
 {% for funding in site.data.funding %}
-          <li>
+{% assign mod4 = forloop.index | minus:1 | modulo:3 %}
+{% assign mod3 = forloop.index | minus:1 | modulo:2 %}
+			<li class="{% if mod4 == 0 %}col-4 {% endif %}{% if mod3 == 0 %}col-3 {% endif %}">
               <div class="tags"><span class="tag date">{{ funding.date }}</span> — <span class="tag type">{{ funding.geo }}</span></div>
               <div class="title">
                   <h4>{{ funding.organisation }}</h4>
