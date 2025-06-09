@@ -67,7 +67,7 @@ layout: index
 				</div>
                 <div class="title">
 					<h5>{{ publications.authors }},</h5>
-					<h4>{% if publications.link and publications.link != "" %}<a href="{{ publications.link }}">{% endif %}
+					<h4>{% if publications.link and publications.link != "" %}<a target="_blank" href="{{ publications.link }}">{% endif %}
 						{{ publications.title }}
 						{% if publications.link and publications.link != "" %}</a>{% endif %}</h4>
                 </div>
