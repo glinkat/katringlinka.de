@@ -17,7 +17,7 @@ layout: index
 	<section id="sec-work" class="section">
 		<div class="content">
 		    <h3><span>1. Work</span></h3>
-		    <ul class="item-list">
+		    <ul class="item-list small-list">
 {% for work in site.data.work %}
 {% assign mod4 = forloop.index | minus:1 | modulo:3 %}
 {% assign mod3 = forloop.index | minus:1 | modulo:2 %}
@@ -34,6 +34,9 @@ layout: index
             <p>{{ work.description }}</p>
           </li>
 {% endfor %}
+				<li>
+					<button class="sec-work-button" onclick="toggleSection('work');">+&nbsp;Expand</button>
+				</li>
 		    </ul>
 		</div>
 	</section>
