@@ -15,24 +15,24 @@ layout: index
 		</div>
 	</section>
 	<section id="sec-work" class="section">
-		<div class="content">
+		<div class="content sec-work-content">
 		    <h3><span>1. Work</span></h3>
 		    <ul class="item-list small-list">
 {% for work in site.data.work %}
 {% assign mod4 = forloop.index | minus:1 | modulo:3 %}
 {% assign mod3 = forloop.index | minus:1 | modulo:2 %}
-		  <li class="{% if mod4 == 0 %}col-4 {% endif %}{% if mod3 == 0 %}col-3 {% endif %}">
-            <div class="tags"><span class="tag date">{{ work.date }}</span> — <span class="tag geo">{{ work.geo }}</span></div>
-            <div class="title">
-                <h4>{{ work.title }}</h4>,
-                <h5>
-                  {% if work.link and work.link != "" %}<a href="{{ work.link }}">{% endif %}
-                    {{ work.organisation }}
-                  {% if work.link and work.link != "" %}</a>{% endif %}
-                </h5>
-            </div>
-            <p>{{ work.description }}</p>
-          </li>
+				<li class="{% if mod4 == 0 %}col-4 {% endif %}{% if mod3 == 0 %}col-3 {% endif %}{% if forloop.index > 9 %}more{% endif %}">
+					<div class="tags"><span class="tag date">{{ work.date }}</span> — <span class="tag geo">{{ work.geo }}</span></div>
+					<div class="title">
+						<h4>{{ work.title }}</h4>,
+						<h5>
+						{% if work.link and work.link != "" %}<a href="{{ work.link }}">{% endif %}
+							{{ work.organisation }}
+						{% if work.link and work.link != "" %}</a>{% endif %}
+						</h5>
+					</div>
+					<p>{{ work.description }}</p>
+				</li>
 {% endfor %}
 				<li>
 					<button class="sec-work-button" onclick="toggleSection('work');">+&nbsp;Expand</button>
